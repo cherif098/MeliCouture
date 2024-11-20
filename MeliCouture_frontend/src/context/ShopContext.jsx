@@ -1,5 +1,4 @@
 import { createContext } from "react";
-import PropTypes from "prop-types"; 
 import { products } from "../assets/assets";
 
 export const ShopContext = createContext();
@@ -17,10 +16,5 @@ const ShopContextProvider = (props) =>{
         </ShopContext.Provider>
     )
 }
-
-// Validation des props
-ShopContextProvider.propTypes = {
-    children: PropTypes.node.isRequired, // Validation de la prop 
-};
 
 export default ShopContextProvider;
