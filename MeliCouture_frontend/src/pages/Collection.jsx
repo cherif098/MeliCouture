@@ -36,10 +36,6 @@ const Collection = () => {
     // creer une copie de products
     let productsCopy = products.slice();
 
-
-    console.log("Selected categories:", category);
-    console.log("Selected subcategories:", subCategory);
-
     // applique le filtre
     if (category.length > 0 ) {
       productsCopy = productsCopy.filter(item => category.includes(item.category));
