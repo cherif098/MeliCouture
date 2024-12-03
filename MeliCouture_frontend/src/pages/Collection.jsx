@@ -5,7 +5,7 @@ import Title from "../components/Title";
 import ProductItem from '../components/ProductItem';
 
 const Collection = () => {
-  const { products } = useContext(ShopContext);
+  const { products,search ,showSearch } = useContext(ShopContext);
   const [showFilter, setShowFilter] = useState(false);
   const [filterProducts, setFilterProducts] = useState([]);
   const [category , setCategory] = useState([]);
@@ -35,6 +35,10 @@ const Collection = () => {
 
     // creer une copie de products
     let productsCopy = products.slice();
+
+    if (showSearch && search){
+      productsCopy = productsCopy.filter(item=> item.name.toLowerCase().includes(search.toLowerCase()))
+    }
 
     // applique le filtre
     if (category.length > 0 ) {
@@ -70,7 +74,7 @@ const Collection = () => {
   // fonction pour afficher les produits
   useEffect(()=>{
     applyFilter();
-  },[category,subCategory])
+  },[category,subCategory,search,showSearch])
 
   // fonction pour appler la fonction de tri par prix
   useEffect(()=>{
