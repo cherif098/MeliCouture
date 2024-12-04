@@ -5,7 +5,7 @@ import Collection from './pages/Collection'
 import About from './pages/About'
 import Contact from './pages/Contact'
 import Product from './pages/Product'
-import Card from './pages/Card'
+import Cart from './pages/Cart'
 import Login from './pages/Login'
 import PlaceOrder from './pages/PlaceOrder'
 import Orders from './pages/Orders'
@@ -29,7 +29,7 @@ const App = () => {
       <Route path='/about' element={<About/>}/>
       <Route path='/cotact' element={<Contact/>}/>
       <Route path='/product/:productId' element={<Product/>}/>
-      <Route path='/cart' element={<Card/>}/>
+      <Route path='/cart' element={<Cart/>}/>
       <Route path='/login' element={<Login/>}/>
       <Route path='/place-order' element={<PlaceOrder/>}/>
       <Route path='/order' element={<Orders/>}/>
